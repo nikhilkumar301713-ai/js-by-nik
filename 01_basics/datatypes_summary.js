@@ -34,7 +34,7 @@ let myObj = {     //obj
 const myFunction = function(){   
     console.log("Hello world");
 }
-
+myFunction()
 console.log(typeof score); //num
 console.log(typeof scoreValue); //num
 console.log(typeof outsideTemp); //object
@@ -46,3 +46,29 @@ console.log(typeof myFunction);//function
 
 
 // https://262.ecma-international.org/5.1/#sec-11.4.3
+
+
+
+
+//**************  MEMORY **************//
+//two types of memory=>1.stack(in all primitive datatypes stack memory is used)
+//2.Heap(non-primitive)
+//in stack memory we get only copied value but in heap we get reference
+
+//in stack
+let myname="nikhil"
+let othername=myname  //othername gets a copied value from myname
+othername="nik"
+
+console.log(myname)
+console.log(othername)
+
+//in heap
+let userone={
+    email:"abc.com",
+    upi:"user@ybl"
+}
+let usertwo=userone //usertwo gets reference from userone
+usertwo.email="xyz.com"  //userone email also changes
+console.log(userone.email) 
+console.log(usertwo.email)
