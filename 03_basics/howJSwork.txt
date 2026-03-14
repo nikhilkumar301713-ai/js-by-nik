@@ -1,0 +1,37 @@
+JAVASCRIPT EXECUTION CONTEX:how JS runs a file
+
+1.global execution context=>allocated in "this"
+2.functional execution contex
+3.eval execution contex
+
+JS runs a js code in two phases
+1.memory creation phase=>only space is allocated for variables we have initialised ,they are not executed
+2.execution phase
+
+for example :
+let val1=10,val2=5;
+function addNum(num1,num2){
+    let total=num1+num2
+    return total
+}
+let res1=addNum(val1,val2)
+let res2=addNum(3,4)
+
+steps in execution this code:
+step1:Global Execution(allocated in "this")
+step2:Memory phase:all var are collected
+        val1->undefined
+        val2->undefined
+        addNum->definition of function
+        res1->undefined
+        res2->undefined
+step3:Execution phase:
+        val1<-10
+        val2<-5
+        addNum->everytime any func executes a new box is formed called 'new executional contex'=>new variable environment + executional thread =>for this again we have memory phase +execution phase
+        ==>memory phase:val1->undefined
+                       :val2->undefined
+                       :total->undefined
+        ==>execution phase:num1->10
+                          :num2->5
+                          :total->15(returns to global executional contex)
