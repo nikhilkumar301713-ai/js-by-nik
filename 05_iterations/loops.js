@@ -1,49 +1,289 @@
-// for
+// // for
 
-for (let i = 0; i <= 10; i++) {
-    const element = i;
-    if (element == 5) {
-        //console.log("5 is best number");
-    }
-    //console.log(element);
+// for (let i = 0; i <= 10; i++) {
+//     const element = i;
+//     if (element == 5) {
+//         //console.log("5 is best number");
+//     }
+//     //console.log(element);
     
-}
+// }
 
-// console.log(element);
+// // console.log(element);
 
-for (let i = 1; i <= 10; i++) {
-    //console.log(`Outer loop value: ${i}`);
-   for (let j = 1; j <= 10; j++) {
-    //console.log(`Inner loop value ${j} and inner loop ${i}`);
-    //console.log(i + '*' + j + ' = ' + i*j );
-   }
+// for (let i = 1; i <= 10; i++) {
+//     //console.log(`Outer loop value: ${i}`);
+//    for (let j = 1; j <= 10; j++) {
+//     //console.log(`Inner loop value ${j} and inner loop ${i}`);
+//     //console.log(i + '*' + j + ' = ' + i*j );
+//    }
     
-}
-let myArray = ["flash", "batman", "superman"]
-//console.log(myArray.length);
-for (let index = 0; index < myArray.length; index++) {
-    const element = myArray[index];
-    //console.log(element);
+// }
+// // let myArray = ["flash", "batman", "superman"]
+// //console.log(myArray.length);
+// for (let index = 0; index < myArray.length; index++) {
+//     const element = myArray[index];
+//     //console.log(element);
     
-}
+// }
 
 
-// break and continue
+// // break and continue
+
+// // for (let index = 1; index <= 20; index++) {
+// //     if (index == 5) {
+// //         console.log(`Detected 5`);
+// //         break
+// //     }
+// //    console.log(`Value of i is ${index}`);
+    
+// // }
 
 // for (let index = 1; index <= 20; index++) {
 //     if (index == 5) {
 //         console.log(`Detected 5`);
-//         break
+//         continue
 //     }
 //    console.log(`Value of i is ${index}`);
     
 // }
 
-for (let index = 1; index <= 20; index++) {
-    if (index == 5) {
-        console.log(`Detected 5`);
-        continue
-    }
-   console.log(`Value of i is ${index}`);
-    
-}
+//********************** */
+
+
+// let index = 0
+// // while (index <= 10) {
+// //     console.log(`Value of index is ${index}`);
+// //     index = index + 2
+// // }
+ 
+// let myArray = ['flash', "batman", "superman"]
+
+// let arr = 0
+// while (arr < myArray.length) {
+//     //console.log(`Value is ${myArray[arr]}`);
+//     arr = arr + 1
+// }
+
+// let score = 11
+
+// do {
+//     console.log(`Score is ${score}`);
+//     score++
+// } while (score <= 10);
+
+
+//********************** */
+
+
+// //array specific loops 
+// // for of
+
+// // ["", "", ""]
+// // [{}, {}, {}]
+
+// const arr = [1, 2, 3, 4, 5]
+
+// for (const num of arr) {
+//     //console.log(num);
+// }
+
+// const greetings = "Hello world!"
+// for (const greet of greetings) {
+//     //console.log(`Each char is ${greet}`)
+// }
+
+// // Maps->unique pairs
+
+// const map = new Map()
+// map.set('IN', "India")
+// map.set('USA', "United States of America")
+// map.set('Fr', "France")
+// map.set('IN', "India")
+// // console.log(map);
+
+// for (const [key, value] of map) {
+//     // console.log(key, ':-', value);
+// }
+
+// const myObject = {
+//     game1: 'NFS',
+//     game2: 'Spiderman'
+// }
+
+// // for (const [key, value] of myObject) {
+// //     console.log(key, ':-', value);
+// // }   //this will give error as myobject is not iterable
+
+//********************** */
+
+
+// //TO ITERATE OBJECTS
+// const myObject = {
+//     js: 'javascript',
+//     cpp: 'C++',
+//     rb: "ruby",
+//     swift: "swift by apple"
+// }
+
+// for (const key in myObject) {
+//     //console.log(`${key} shortcut is for ${myObject[key]}`);
+// }
+
+// const programming = ["js", "rb", "py", "java", "cpp"]
+// //keys of an arr are their idx
+// for (const key in programming) {
+//     //console.log(key);  //0,1,2,3,4  
+//     //console.log(programming[key]);  //all values of arr
+// }
+
+// // const map = new Map()
+// // map.set('IN', "India")
+// // map.set('USA', "United States of America")
+// // map.set('Fr', "France")
+// // map.set('IN', "India")
+
+// // for (const key in map) {
+// //     console.log(key);   //this will give nothing as map is not iterable like this 
+// // }
+
+
+//********************** */
+
+
+// const coding = ["js", "ruby", "java", "python", "cpp"]
+// // coding.forEach( function (val){
+// //     console.log(val);
+// // } )
+
+// // coding.forEach( (item) => {
+// //     console.log(item);
+// // } )
+
+// // function printMe(item){
+// //     console.log(item);
+// // }
+// // coding.forEach(printMe)
+
+// // coding.forEach( (item, index, arr)=> {
+// //     console.log(item, index, arr);
+// // } )
+
+// //arr of objects
+// const myCoding = [
+//     {
+//         languageName: "javascript",
+//         languageFileName: "js"
+//     },
+//     {
+//         languageName: "java",
+//         languageFileName: "java"
+//     },
+//     {
+//         languageName: "python",
+//         languageFileName: "py"
+//     },
+// ]
+
+// myCoding.forEach( (item) => {
+//     console.log(item.languageName);
+// } )
+
+
+//************************************* */
+
+// const coding = ["js", "ruby", "java", "python", "cpp"]
+// const values = coding.forEach( (item) => {
+//     //console.log(item);
+//     return item        //undefined =>foreach do not return anything
+// } )
+// console.log(values);
+
+
+// const myNums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+// const newNums = myNums.filter( (num) => num>4)  //filter return values
+// const newNums = []   //[5,6,7,8,9,10]
+
+//but after using scope we have to use 'return' in filter function also otherwise it will return empty arr[]
+// const newNums = myNums.filter( (num) => {
+//     return num>4
+// })  //filter return values
+// const newNums = []   //[5,6,7,8,9,10] ,[] if no return is used
+
+
+// myNums.forEach( (num) => {
+//     if (num > 4) {
+//         newNums.push(num)
+//     }
+// } )
+
+// console.log(newNums);
+
+
+// const books = [
+//     { title: 'Book One', genre: 'Fiction', publish: 1981, edition: 2004 },
+//     { title: 'Book Two', genre: 'Non-Fiction', publish: 1992, edition: 2008 },
+//     { title: 'Book Three', genre: 'History', publish: 1999, edition: 2007 },
+//     { title: 'Book Four', genre: 'Non-Fiction', publish: 1989, edition: 2010 },
+//     { title: 'Book Five', genre: 'Science', publish: 2009, edition: 2014 },
+//     { title: 'Book Six', genre: 'Fiction', publish: 1987, edition: 2010 },
+//     { title: 'Book Seven', genre: 'History', publish: 1986, edition: 1996 },
+//     { title: 'Book Eight', genre: 'Science', publish: 2011, edition: 2016 },
+//     { title: 'Book Nine', genre: 'Non-Fiction', publish: 1981, edition: 1989 },
+//   ];
+//   let userBooks = books.filter( (bk) => bk.genre === 'History')
+//   userBooks = books.filter( (bk) => {                     //while(using scope we have to use return)
+//     return bk.publish >= 1995 && bk.genre === "History"
+// })
+//   console.log(userBooks);
+
+
+
+//*************************************//
+// const myNumers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+// // const newNums = myNumers.map( (num) => { return num + 10})
+
+// //chaining
+// const newNums = myNumers
+//                 .map((num) => num * 10 )  //1st multiply each by 10
+//                 .map( (num) => num + 1)   //then inc by 1
+//                 .filter( (num) => num >= 40) //then filter out
+// console.log(newNums);
+
+
+//*************************************//
+const myNums = [1, 2, 3]
+
+// const myTotal = myNums.reduce(function (acc, currval) {
+//     console.log(`acc: ${acc} and currval: ${currval}`);
+//     return acc + currval
+// }, 0)    //0 is starting point whose val acc will get
+
+//in arrow function
+const myTotal = myNums.reduce( (acc, curr) => acc+curr, 0)
+
+console.log(myTotal);
+
+
+const shoppingCart = [
+    {
+        itemName: "js course",
+        price: 2999
+    },
+    {
+        itemName: "py course",
+        price: 999
+    },
+    {
+        itemName: "mobile dev course",
+        price: 5999
+    },
+    {
+        itemName: "data science course",
+        price: 12999
+    },
+]
+//add all prices in shoppingCart
+const priceToPay = shoppingCart.reduce((acc, item) => acc + item.price, 0)
+console.log(priceToPay);
