@@ -1,14 +1,14 @@
 // Dates
 
 let myDate = new Date()
-console.log(myDate);
-console.log(myDate.toString());
-console.log(myDate.toDateString());
-console.log(myDate.toLocaleString());
-console.log(myDate.toISOString());
-console.log(myDate.toJSON());
+// console.log(myDate);
+// console.log(myDate.toString());
+// console.log(myDate.toDateString());
+// console.log(myDate.toLocaleString());
+// console.log(myDate.toISOString());
+// console.log(myDate.toJSON());
 console.log(myDate.toLocaleTimeString());
-console.log(typeof myDate); //object
+// console.log(typeof myDate); //object
 
 // let myCreatedDate = new Date(2023, 0, 23)  //mon jan 23 2023 =>months start from 0
 // let myCreatedDate = new Date(2023, 0, 23, 5, 3) //1/23/2023,, 5:03:00AM
