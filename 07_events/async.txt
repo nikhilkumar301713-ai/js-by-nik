@@ -1,0 +1,9 @@
+default Javascript->synchronous(code executes line-by-line) and single threaded(everything executes in a single thread)
+
+Execution contex:executes one line of code at a time
+->each operation waits for the last one to complete before executing
+->CALL STACK ,MEMORY HEAP
+
+
+.blocking code:block the flow of program->read file sync :jab tak file read hogi tab tak baki code nhi chalega
+.non-blocking code:does not block execution->read file async:file read + other works on code

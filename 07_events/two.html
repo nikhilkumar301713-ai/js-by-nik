@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #414141;color: white;">
+    <h1>Chai and Code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>   //TO EXECUTE CODE AFTER A CERTAIN TIME=>we use setTimeout
+    // setTimeout(function(){
+    //     console.log('Nikhil')
+    // },3000) //after 3sec Nikhil will be prited on console of document
+//another way
+    const sayNikhil = function(){
+        console.log("Nikhil");
+    }
+    setTimeout(sayNikhil,3000)
+
+
+    const changeText = function(){
+        document.querySelector('h1').innerHTML = "best JS series"
+    }
+    const changeMe = setTimeout(changeText, 3000) //after 3sec "chai and code" change to "best JS series"
+//TO STOP TIMEOUT :ex we click on stop button before 3sec then change will not occur
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearTimeout(changeMe) 
+        console.log("STOPPED")
+    })
+</script>
+</html> 
