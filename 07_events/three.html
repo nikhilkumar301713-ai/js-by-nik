@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #414141;color: white;">
+    <h1>Chai and Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>  //setInterval()=>ex prints after every 3sec
+//using arrow function
+    // setInterval(() => {
+    //     console.log("Nikhil",Date.now());
+    // }, 3000);
+
+    const sayDate=function(str){
+        console.log(str,Date.now());
+    }
+//using normal function and storing it in a var intervalid
+    // const intervalid=setInterval(sayDate,3000,"hi");
+
+
+//to stop the interval
+    // clearInterval(intervalID)//permanently stops the interval
+
+
+
+
+
+//TASK
+
+//to start and stop inteval to our will
+//1.START TIME INTERVAL
+    let intervalID;   // global variable
+    document.querySelector("#start").addEventListener('click',function(){
+        intervalID=setInterval(sayDate, 1000, "hi");
+        console.log('started');
+    })
+//2.STOP TIME INTERVAL
+    document.querySelector("#stop").addEventListener('click',function(){
+        clearInterval(intervalID);
+        console.log('STOPPED');
+    })
+
+
+
+</script>
+</html> 
