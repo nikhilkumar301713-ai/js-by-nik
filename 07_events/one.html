@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML EVENTS</title>
+</head>
+<body style="background-color: #414141;color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body> 
+<!--all events of js run sequencially with some exceptions  ex.browser events(invoke by an activity eg.click,keyboard press,mouse press)-->
+<script>
+    // document.getElementById('owl').onclick=function(){
+    //     alert("owl clicked")
+    // }    //this approach gives less features
+
+    // document.getElementById('owl').addEventListener('click',function(){
+    //     alert("owl clicked again")
+    // },false) //3rd parameter is false in default(write or dont write)
+
+    //other old approahes:-
+    // attachEvent()
+    // jQuery - on
+
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    // document.getElementById('owl').addEventListener('click',function(e){
+    //     console.log(e); //different events(pointerEvents)
+    // })     
+
+    //event propagation :1.event bubbling(default false)    2.event capturing(true)
+//1.Event bubbling=>false(bottom to top)
+    // document.getElementById('images').addEventListener('click',function(e){
+    //     alert("clicked inside the ul"); //if we click on any images except owl we get alert of ul
+    //     console.log("clicked inside the ul");
+    // },false)
+    // document.getElementById('owl').addEventListener('click',function(e){
+    //     alert("owl clicked") //if we click on owl we get alert of owl then alert of ul
+    //     console.log("owl clicked") // "owl clicked" then "clicked inside the ul"
+    //     e.stopPropagation(); //if we click on owl we get alert of owl only 
+    // },false)  
+
+//2.event capturing=>true(top to bottom)
+    // document.getElementById('images').addEventListener('click',function(){
+    //     alert("clicked inside the ul"); //if we click on any images except owl we get alert of ul
+    //     console.log("clicked inside the ul");
+    // },true)
+    // document.getElementById('owl').addEventListener('click',function(){
+    //     alert("owl clicked") //if we click on owl we get alert of ul then alert of owl
+    //     console.log("owl clicked")  //"clicked inside the ul" then "owl clicked"
+    // },true)
+
+
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     e.preventDefault(); //if we click on google it will NOT go to google website 
+    //     e.stopPropagation() //to stop getting alert of "clicked inside the ul" as google is inside ul and we are using Event bubbling
+    //     console.log("google clicked");
+    // }, false)
+
+//task:-click on images to remove it
+    document.querySelector('#images').addEventListener('click',function(e){
+        console.log(e.target.parentNode);
+        console.log(e.target.tagName);
+        // let rem=e.target.parentNode   //but when we are clicking on right of google it removes all images because parentnode of google is li and its parent is ul so it will remove all ul
+        //m1
+        // rem.remove();
+        //m2
+        // rem.parentNode.removeChild(rem);
+
+        //condition to prevent from removing all images
+        if(e.target.tagName=='IMG'){
+            console.log(e.target.id);
+            let removeit=e.target.parentNode;
+            removeit.remove()
+        }
+    },false)
+
+</script>
+</html>
