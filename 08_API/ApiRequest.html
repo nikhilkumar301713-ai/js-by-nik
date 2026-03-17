@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;color: white;">
+0	UNSENT	Client has been created. open() not called yet.
+<br>
+1	OPENED	open() has been called.
+<br>
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+<br>
+3	LOADING	Downloading; responseText holds partial data.
+<br>
+4	DONE	The operation is complete.
+</body>
+<script>
+
+// ================== 🌐 WHAT IS AN API ==================
+
+// 👉 API = a way for two systems to talk
+
+// Example:
+// Frontend (JavaScript) asks → Backend (GitHub server) replies
+
+// ✔ Real meaning:
+// API = rules + URL (endpoint) + data format (usually JSON)
+
+// ✔ Simple line to remember:
+// "API lets me request data from another system"
+
+
+// ================== 🎯 GOAL ==================
+
+// I want to get user data from GitHub
+
+const requestUrl = 'https://api.github.com/users/nikhilkumar301713-ai';
+
+
+// ================== 🛠 STEP 1: CREATE TOOL ==================
+
+// This object helps us send requests to server
+const xhr = new XMLHttpRequest();
+
+
+// ================== ⚙ STEP 2: PREPARE REQUEST ==================
+
+// open() = just setup (NOT sending yet)
+// 'GET' = I want to FETCH data
+xhr.open('GET', requestUrl);
+
+
+// ================== 📊 READY STATE (VERY IMPORTANT) ==================
+
+// 0 → request not started
+// 1 → open() called
+// 2 → request received by server
+// 3 → data is coming
+// 4 → DONE (data fully received)
+
+// At this point:
+console.log(xhr.readyState); // mostly 1
+
+
+// ================== 🚀 STEP 3: SEND REQUEST ==================
+
+// Now the request actually goes to server
+xhr.send();
+
+
+// ================== ⏳ STEP 4: HANDLE RESPONSE ==================
+
+// API calls are ASYNCHRONOUS (they take time)
+// So we listen for changes
+
+xhr.onreadystatechange = function () {
+
+    console.log(xhr.readyState); // track progress
+
+    // When everything is complete
+    if (xhr.readyState === 4) {
+
+        // 🔴 Important:
+        // Response comes as STRING (JSON format)
+
+        const data = JSON.parse(xhr.responseText);
+
+        // Now it's a JS object
+        console.log(data);
+        console.log(typeof data); // object
+
+        // Access any property
+        console.log(data.followers);
+    }
+};
+
+</script>
+</html> 
